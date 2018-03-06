@@ -1,3 +1,5 @@
-<h2>Information about: <%= @director.name %></h2>
+<section class="director-show">
+  <h2 class="each-director">Information about: <%= @director.name %></h2>
 
-<%= button_to "Movies by #{@director.name}", director_movies_path(@director), method: :get %>
+  <%= button_to "Movies by #{@director.name}", director_movies_path(@director), method: :get, class: 'director-index-button' %>
+</section>

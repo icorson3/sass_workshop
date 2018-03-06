@@ -1,6 +1,8 @@
-<h1>All Movies for <%= @director.name %></h1>
+<section class="movie-index">
+  <h1 class="all-movies">All Movies for <%= @director.name %></h1>
 
-<% @movies.each do |movie| %>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <p><%= movie.description %></p>
-<% end %>
+  <% @movies.each do |movie| %>
+    <h2 class="movie-show-link"><%= link_to movie.title, movie_path(movie) %></h2>
+    <p class="movie-description"><%= movie.description %></p>
+  <% end %>
+</section>
