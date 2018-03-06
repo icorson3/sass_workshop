@@ -1,0 +1,7 @@
+<h1>All Directors</h1>
+
+<% @directors.each do |director| %>
+<ul>
+  <li>More information about: <%= link_to director.name, director_path(director) %></li>
+</ul>
+<% end %>
