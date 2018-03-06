@@ -1,3 +1,5 @@
-<h1><%= @movie.title %></h1>
-<h2>Director: <%= link_to @movie.director.name, director_path(@movie.director) %></h2>
-<p><%= @movie.description %></p>
+<section class="movie-show">
+  <h1 class="movie-title"><%= @movie.title %></h1>
+  <h2 class="director-show-link">Director: <%= link_to @movie.director.name, director_path(@movie.director) %></h2>
+  <p class="movie-description"><%= @movie.description %></p>
+</section>
