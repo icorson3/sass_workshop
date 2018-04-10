@@ -1,24 +1,16 @@
-# README
+# RailsConf 2018 - Let's Get Sassy Workshop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+1. Clone this repository.
+2. Create the database by running `rake db:create`. 
+3. Run the migrations by running `rake db:migrate`.
+4. Seed the database by running `rake db:seed`.
+5. The following uri's will be available from `http://localhost:3000/`:
+  - '/'
+  - '/directors'
+  - '/directors/:id'
+  - '/directors/:id/movies'
+  - '/movies/:id'
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
