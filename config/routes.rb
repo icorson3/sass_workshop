@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root :to => "movies#index", :director_id => '1'
 
   resources :directors, shallow: true, only: [:index, :show] do
     resources :movies, only: [:index, :show]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
