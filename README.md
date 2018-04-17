@@ -73,7 +73,7 @@ A stylesheet looks from rule to rule and calculates specificity. `Specificity is
 - Let's define a variable for the hex color #3D348B and define it for the font color of all `h1` elements and #E0E2DB as the background color. 
 
 ```scss 
-// base.scss
+/* base.scss */
 
 $indigo-header: #3D348B;
 $lighter-gray: #E0E2DB;
@@ -93,7 +93,7 @@ h1 {
 The results should be something like:
   
 ```scss 
-// base.scss
+/* base.scss */
 
 $indigo-header: #3D348B;
 $maroon: #800000;
@@ -454,7 +454,7 @@ font: {
 - Let's add a mixin to our `base.scss` file, where it will be accessible to the files below it (based on `@import` statements).
 
 ```scss
-// base.scss
+/* base.scss */
 
 @mixin big-info {
   font: {
@@ -493,7 +493,7 @@ p {
 What if we want some of the information in a mixin to dynamically change? We can use arguments with our mixins to acheive this. Let's change up our `h1` on our `movie-index` to be a little different than the other `h1`'s. We want it to be `40px`, a font family of `gill sans` and the color `#276360`. We also need to adjust our `h1` in the `skeleton.scss` file.
 
 ```scss 
-# base.scss 
+/* base.scss */
 
 @mixin big-info($font, $size, $color) {
   font: {
@@ -506,7 +506,7 @@ What if we want some of the information in a mixin to dynamically change? We can
 ```
 
 ```scss 
-# skeleton.scss
+/* skeleton.scss */
 
 h1 {
   @include big-info($fun-font, 50px, $indigo-header);
@@ -525,7 +525,7 @@ p {
 ```
 
 ```scss
-# movie-index.scss
+/* movie-index.scss */
   
 $custom-border: 3px dotted $mustard;
 
