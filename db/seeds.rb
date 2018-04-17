@@ -9,7 +9,7 @@ class Seed
         director: Director.find_or_create_by(name: row[:director])
       )
       puts "Created #{movie.title}."
-    end
+    end 
   end
 end
 
