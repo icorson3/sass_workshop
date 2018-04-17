@@ -356,7 +356,7 @@ This would allow me to, at any moment, easily find and update the styles associa
 
 @import 'base';
 @import 'skeleton';
-
+@import 'sections/movie_index';
 ```
 
 ```scss
