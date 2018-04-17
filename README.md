@@ -72,7 +72,7 @@ A stylesheet looks from rule to rule and calculates specificity. `Specificity is
 - To define a variable, we use a `$` to declare the variable and a `:` to assign it.
 - Let's define a variable for the hex color #3D348B and define it for the font color of all `h1` elements and #E0E2DB as the background color. 
 
-```sass 
+```scss 
 // base.scss
 
 $indigo-header: #3D348B;
@@ -92,7 +92,7 @@ h1 {
   
 The results should be something like:
   
-```sass 
+```scss 
 // base.scss
 
 $indigo-header: #3D348B;
@@ -125,7 +125,7 @@ What if we just want the `<h1>` on the `movies#index` to be `$darker-gray` but o
 
 We can NEST our html elements in the same structure the our page has. This provides more readable code and an actual STRUCTURE for our CSS. FINALLY!!!
 
-```sass
+```scss
   h1 {
     color: $indigo-header;
     background-color: $lighter-gray;
@@ -162,7 +162,7 @@ Another great benefit of sass is that we can nest our properties for further cla
 
 Let's give our `h2` a class selector and center our `second-header` in our `movie-index` and strikethrough the text.
 
-```SASS
+```scss
   h1 {
     color: $indigo-header;
     background-color: $lighter-gray;
@@ -192,7 +192,7 @@ Let's give our `h2` a class selector and center our `second-header` in our `movi
 
 Let's navigate to our browser and inspect the `h2` element on our `movie-index`. When this sass code gets compiled, we see that it is automatically namespaced and if it is an actual property in CSS, it gets applied. It will try to compile, no matter what. For example, let's look at this in the browser: 
 
-```sass 
+```scss 
  .movie-index {
     .movie-show-link {
       text: {
@@ -214,7 +214,7 @@ Splitting CSS files into smaller files also requires more HTTP requests. Sass pr
 
 Right now, our `application.scss` file looks like this and is set up for Sprocket directives:
 
-```sass 
+```scss 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -240,14 +240,14 @@ If you want to use multiple Sass files, you should generally use the Sass @impor
 
 The directives to remove are: 
 
-```sass 
+```scss 
  *= require_tree .
  *= require_self
 ```
 
 And outside of the comment block, we import our sass file. 
 
-```css 
+```scss 
 @import 'base';
 ```
 
@@ -263,7 +263,7 @@ This is a great place to store color and font variables and mixins that are used
 
 Let's put font colors and font type there. We want to use a new "fun" font!
 
-```sass
+```scss
 /* assets/stylesheets/base.scss */
 
 @import url('https://fonts.googleapis.com/css?family=Joti+One');
@@ -287,7 +287,7 @@ We also need to import the file in our manifest file. Since the manifest file se
 
 Our manifest file should look like this:
 
-```sass 
+```scss 
 @import 'base';
 @import 'skeleton';
 ```
@@ -296,7 +296,7 @@ And `skeleton.scss`:
 
 Let's use the `fun-font` at 50px and gather all of this into an SCSS partial.
 
-```css
+```scss
 /* assets/stylesheets/skeleton.scss */
 
 $custom-border: 3px dotted $mustard;
@@ -351,7 +351,7 @@ A general rule of thumb is **import in order of least specific to most specific*
 
 This would allow me to, at any moment, easily find and update the styles associated with a specific section. Let's pull the `movie-index` code into another file. 
 
-```sass 
+```scss 
 /* application.scss */
 
 @import 'base';
@@ -359,7 +359,7 @@ This would allow me to, at any moment, easily find and update the styles associa
 
 ```
 
-```sass
+```scss
 /* assets/stylesheets/sections/_movie-index.scss */
 
 $custom-border: 3px dotted $mustard;
@@ -410,7 +410,7 @@ This cascade of partials may not be immediately implementable for your site. You
 
 - Let's take a small example from `movie_mania` to demonstrate how to use `@extend`. We want both our `h2`'s on all pages and `p` tag on the `movie-index` to both be `$maroon`. Using `@extend` is similar in Sass as it is in Ruby classes. It allows the tag that holds the `@extend` rule to inherit the rules of the class/id/basic selectors.
 
-```sass
+```scss
 
 $custom-border: 3px dotted $mustard;
 
@@ -442,7 +442,7 @@ $custom-border: 3px dotted $mustard;
 - Mixins allow you to define styles that can be re-used throughout the stylesheet. Think about this similarly to a function or method that is reusable.
 - Let's say that we want to reuse this piece of code that right now applies to all `h1` tags:
 
-```sass 
+```scss 
 font: {
     family: $fun-font;
     size: 50px;
@@ -453,7 +453,7 @@ font: {
 
 - Let's add a mixin to our `base.scss` file, where it will be accessible to the files below it (based on `@import` statements).
 
-```sass
+```scss
 // base.scss
 
 @mixin big-info {
@@ -470,7 +470,7 @@ A mixin is define by an `@mixin` followed by the name of the mixin and `{}`.
 
 And to use it in our `skeleton.scss` file or any other file, we need to use `@include` in our rules:
 
-```sass
+```scss
 h1 {
   @include big-info;
 }
@@ -492,7 +492,7 @@ p {
 
 What if we want some of the information in a mixin to dynamically change? We can use arguments with our mixins to acheive this. Let's change up our `h1` on our `movie-index` to be a little different than the other `h1`'s. We want it to be `40px`, a font family of `gill sans` and the color `#276360`. We also need to adjust our `h1` in the `skeleton.scss` file.
 
-```sass 
+```scss 
 # base.scss 
 
 @mixin big-info($font, $size, $color) {
@@ -505,7 +505,7 @@ What if we want some of the information in a mixin to dynamically change? We can
 }
 ```
 
-```sass 
+```scss 
 # skeleton.scss
 
 h1 {
@@ -524,7 +524,7 @@ p {
 }
 ```
 
-```sass
+```scss
 # movie-index.scss
   
 $custom-border: 3px dotted $mustard;
