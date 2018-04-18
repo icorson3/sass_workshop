@@ -62,7 +62,7 @@ A stylesheet looks from rule to rule and calculates specificity. `Specificity is
 
 ### Color Palette 
 
--  Here is the color palette that we will be using:
+-  Here is the color palette that we will be using with the exception of black, we replace it with hex #800000:
 
 ![color palette](https://user-images.githubusercontent.com/14942680/37047189-786710c4-2127-11e8-9394-bc4be403bfc8.png)
 
@@ -87,7 +87,7 @@ h1 {
 - Our app is pretty small right now so keeping track of colors is simple but imagine as our app grows and we have to continually look back for our hex codes. By creating variables, we can easily access these colors at any point. 
 - On your own: 
   - Define the rest of the color palette with variables. 
-  - Assign all `h2` elements to the variable you set the hex #191716
+  - Assign all `h2` elements to the variable you set the hex #800000.
   - Create a variable called `custom-border` and assign border rules so that a 3 pixel dotted border in the color #E6AF2E around all `p` elements.
   
 The results should be something like:
