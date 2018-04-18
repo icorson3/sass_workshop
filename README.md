@@ -87,8 +87,8 @@ h1 {
 - Our app is pretty small right now so keeping track of colors is simple but imagine as our app grows and we have to continually look back for our hex codes. By creating variables, we can easily access these colors at any point. 
 - On your own: 
   - Define the rest of the color palette with variables. 
-  - Assign all `h2` elements to the variable you set the hex #800000.
-  - Create a variable called `custom-border` and assign border rules so that a 3 pixel dotted border in the color #E6AF2E around all `p` elements.
+  - Assign the text color of all `h2` elements to the variable you set the hex #800000.
+  - Create a variable called `custom-border` and assign border rules so that a 3 pixel dotted border in the color #E6AF2E appers around all `p` elements.
   
 The results should be something like:
   
