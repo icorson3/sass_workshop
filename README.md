@@ -206,7 +206,7 @@ Let's navigate to our browser and inspect the `h2` element on our `movie-index`.
 
 On your own, add a font family of `papyrus` and a size of 30px to the `<p>` tag under `.movie-index`
 
-## Key to success: Modularity
+## Feature #3: Modularity
 
 HTML and CSS deserve to be as DRY as your Ruby is. This is difficult to achieve in raw HTML and CSS. 
 
@@ -255,7 +255,7 @@ We use quotes around the file to be imported and a `;` to finish the statement, 
 
 Let's start up our browser and navigate to the root to see our BEAUTIFUL CSS!
 
-#### Base Styles
+### Base Styles
 
 Right off the bat, we created a `base.scss` that is holding all our code. We want to make this a partial that can hold all base styles for your site. If you get more into SCSS functionalities, you can use this partial to store mixins and extensions as well.
 
@@ -277,7 +277,8 @@ $lighter-gray: #E0E2DB;
 $darker-gray: #BEB7A4;
 
 ```
-#### Skeletal styles
+
+### Skeletal styles
 
 Let's create another file in the same directory called `skeleton.scss` and place our rules in that file. 
 
@@ -347,8 +348,6 @@ If a scss file requires another scss file, the necessary scss files will need to
 
 A general rule of thumb is **import in order of least specific to most specific**. This way, if base styles need to be overridden, they can be within their individual section.
 
-#### Sections
-
 This would allow me to, at any moment, easily find and update the styles associated with a specific section. Let's pull the `movie-index` code into another file. 
 
 ```scss 
@@ -382,7 +381,7 @@ $custom-border: 3px dotted $mustard;
 }
 ```
 
-#### Global Components
+### Global Components
 
 We've got our base skeleton's styles extracted. We've got an organized space for each section of our site's extracted styles. What about the styles that are still being shared among our site?
 
@@ -396,7 +395,7 @@ Consider the following possibly global components you'd have across your site:
 
 Creating a separate SCSS partial for each of these makes our code immensely more modular. So modular, in fact, that you could reuse these partials among other sites you build with a simple drag/drop and aligning of element/class names.
 
-#### See What Feels Right for Your Site
+### See What Feels Right for Your Site
 
 This cascade of partials may not be immediately implementable for your site. You may even think of another way of organizing your styles. However, with the above, you'll have:
 
@@ -404,9 +403,7 @@ This cascade of partials may not be immediately implementable for your site. You
 - Section partials with styles specific to that section
 - Global components defined in one place
 
-### More SASS syntax
-
-#### Using `@extend`
+## Feature #4: Inheritance
 
 - Let's take a small example from `movie_mania` to demonstrate how to use `@extend`. We want both our `h2`'s on all pages and `p` tag on the `movie-index` to both be `$maroon`. Using `@extend` is similar in Sass as it is in Ruby classes. It allows the tag that holds the `@extend` rule to inherit the rules of the class/id/basic selectors.
 
@@ -437,7 +434,7 @@ $custom-border: 3px dotted $mustard;
 - Now our `p` inherits the same `$maroon` color as the `h2` tags and we don't have to repeat ourselves. But what else did this do? What changes do we see?
 - Fun Fact: A selector can use more than one extend!
 
-#### Mixins  
+## Feature #5: Mixins  
 
 - Mixins allow you to define styles that can be re-used throughout the stylesheet. Think about this similarly to a function or method that is reusable.
 - Let's say that we want to reuse this piece of code that right now applies to all `h1` tags:
@@ -488,7 +485,7 @@ p {
 
 ```
 
-#### Mixins with default arguments
+### Mixins with default arguments
 
 What if we want some of the information in a mixin to dynamically change? We can use arguments with our mixins to acheive this. Let's change up our `h1` on our `movie-index` to be a little different than the other `h1`'s. We want it to be `40px`, a font family of `gill sans` and the color `#276360`. We also need to adjust our `h1` in the `skeleton.scss` file.
 
