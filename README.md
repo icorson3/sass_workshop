@@ -96,7 +96,6 @@ The results should be something like:
 /* base.scss */
 
 $indigo-header: #3D348B;
-$maroon: #800000;
 $mustard: #E6AF2E;
 $lighter-gray: #E0E2DB;
 $darker-gray: #BEB7A4;
