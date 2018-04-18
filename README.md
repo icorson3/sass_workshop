@@ -97,6 +97,7 @@ The results should be something like:
 
 $indigo-header: #3D348B;
 $mustard: #E6AF2E;
+$maroon: #800000;
 $lighter-gray: #E0E2DB;
 $darker-gray: #BEB7A4;
 
