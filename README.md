@@ -160,7 +160,7 @@ Benefits:
 
 Another great benefit of sass is that we can nest our properties for further clarification and organization.
 
-Let's give our `h2` a class selector and center our `second-header` in our `movie-index` and strikethrough the text.
+Let's give use the class that already exists and center our `movie-show-link` in our `movie-index` and strikethrough the text.
 
 ```scss
   h1 {
@@ -190,7 +190,7 @@ Let's give our `h2` a class selector and center our `second-header` in our `movi
   }
 ```
 
-Let's navigate to our browser and inspect the `h2` element on our `movie-index`. When this sass code gets compiled, we see that it is automatically namespaced and if it is an actual property in CSS, it gets applied. It will try to compile, no matter what. For example, let's look at this in the browser: 
+Let's navigate to our browser and inspect the `movie-show-link` element on our `movie-index`. When this sass code gets compiled, we see that it is automatically namespaced and if it is an actual property in CSS, it gets applied. It will try to compile, no matter what. For example, let's look at this in the browser: 
 
 ```scss 
  .movie-index {
